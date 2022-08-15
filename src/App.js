@@ -57,18 +57,18 @@ const App = () => {
         <>      
             <div className='contenedor'>     
                 <form action="" onSubmit={handle_submit} >                    
-                    <input type="text" name="nombre" id="nombre" value={nombre} onChange={ (e)=>{ handle_input_nombre(e)}} placeholder="Nombre"/>
+                    <input type="text" name="nombre" id="nombre" value={nombre} onChange={ (e)=>{ handle_input_nombre(e)}} placeholder=" Nombre"/>
 
-                    <input type="text" name="apellido" id="apellido" value={apellido} onChange={ (e)=>{ handle_input_apellido(e)}} placeholder="Apellido"/>
+                    <input type="text" name="apellido" id="apellido" value={apellido} onChange={ (e)=>{ handle_input_apellido(e)}} placeholder=" Apellido"/>
 
-                    <input type="text" name="dni" id="dni" value={dni} onChange={ (e)=>{ handle_input_dni(e)}} placeholder="Dni"/>
+                    <input type="text" name="dni" id="dni" value={dni} onChange={ (e)=>{ handle_input_dni(e)}} placeholder=" Dni"/>
 
                     <select name='cbo_lista_clases' id='cbo_lista_clases'>
                         <option value="0" key="0"> Seleccione un tipo</option>
                         {clases.map((clase)=>   <option value={clase.tipo} key={clase.id}> {clase.tipo}</option>   )}
                     </select>
 
-                    <input type="text" name="butaca" id="butaca" value={butaca} onChange={ (e)=>{ handle_input_butaca(e)}} placeholder="Butaca"/>
+                    <input type="text" name="butaca" id="butaca" value={butaca} onChange={ (e)=>{ handle_input_butaca(e)}} placeholder=" Butaca"/>
                     <button type="submit">Agregar</button>
             </form>
             <table>
