@@ -27,3 +27,12 @@ Formato de entrega : Link de stackblitz
 
 
 img2
+
+
+
+<!--
+https://www.paradigmadigital.com/dev/agilizar-desarrollo-tablas-react/
+npm install react-table --save
+
+
+-->
