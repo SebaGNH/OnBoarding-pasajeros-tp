@@ -67,6 +67,7 @@ form input, select{
     border-radius: 3px;
     border: 1px solid #5cdcff;
     font-size: 1em;
+    font-weight: 300;
     letter-spacing: 1px;
 }
 form input:focus{
@@ -89,6 +90,7 @@ form button{
     transition: .5s;
     font-size: 1em;
     margin-bottom: 10px;
+
 }
 form button:hover{
     background-color: #5cdcff;
