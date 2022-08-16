@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/OnBoarding-pasajeros-tp/static/css/main.7abe594b.css",
+    "main.js": "/OnBoarding-pasajeros-tp/static/js/main.1eb08a89.js",
+    "index.html": "/OnBoarding-pasajeros-tp/index.html",
+    "main.7abe594b.css.map": "/OnBoarding-pasajeros-tp/static/css/main.7abe594b.css.map",
+    "main.1eb08a89.js.map": "/OnBoarding-pasajeros-tp/static/js/main.1eb08a89.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7abe594b.css",
+    "static/js/main.1eb08a89.js"
+  ]
+}
