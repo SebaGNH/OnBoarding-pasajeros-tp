@@ -54,6 +54,7 @@ const Formulario = ({pasajeros, modificar_pasajero}) => {
         validar_campos();
     }
     return ( <>
+        <h1>Aerolíneas Argentinas</h1>
         <form action="" onSubmit={handle_submit} >                    
             <input type="text" name="nombre_y_apellido" id="nombre_y_apellido" value={nombre_y_apellido} onChange={ (e)=>{ handle_input_nombre_y_apellido(e)}} placeholder=" Nombre y Apellido"/>
 

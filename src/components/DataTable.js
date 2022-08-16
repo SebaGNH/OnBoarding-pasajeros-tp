@@ -3,7 +3,8 @@
 const DataTable = ({pasajeros}) => {
     return ( 
         <>
-            <table>
+            {pasajeros.length > 0 ?             
+                <table>
                     <thead>
                         <tr>
                             <th>Id</th>                
@@ -25,6 +26,7 @@ const DataTable = ({pasajeros}) => {
                         ))}
                     </tbody>
             </table> 
+            : <h2>No hay pasajeros agregados</h2>}
         </>
     );
 }
