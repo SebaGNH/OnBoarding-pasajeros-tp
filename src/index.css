@@ -72,6 +72,9 @@ form input, select{
 form input:focus{
     border-color: #5cdcff;
 }
+form select{
+    background-color: #F5F5F5;
+}
 form button{
     background-color: #fff;
     width: 90%;

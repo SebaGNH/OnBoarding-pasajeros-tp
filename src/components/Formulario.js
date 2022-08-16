@@ -22,9 +22,10 @@ const Formulario = ({pasajeros, modificar_pasajero}) => {
         modificar_cbo_clase(e.target.value);
     }
 
-    const limpiar_campos = () => {
+    const limpiar_campos = (e) => {
         actualizar_nombre_y_apellido("");
         actualizar_dni("");
+        document.getElementById("cbo_lista_clases").selectedIndex = 0;
         actualizar_butaca("");
     }
 
