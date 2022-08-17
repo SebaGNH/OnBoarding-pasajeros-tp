@@ -56,16 +56,16 @@ const Formulario = ({pasajeros, modificar_pasajero}) => {
     return ( <>
         <h1>Aerolíneas Argentinas</h1>
         <form action="" onSubmit={handle_submit} >                    
-            <input type="text" name="nombre_y_apellido" id="nombre_y_apellido" value={nombre_y_apellido} onChange={ (e)=>{ handle_input_nombre_y_apellido(e)}} placeholder=" Nombre y Apellido"/>
+            <input type="text" name="nombre_y_apellido" id="nombre_y_apellido" value={nombre_y_apellido} onChange={ (e)=>{ handle_input_nombre_y_apellido(e)}} placeholder="Nombre y Apellido"/>
 
-            <input type="text" name="dni" id="dni" value={dni} onChange={ (e)=>{ handle_input_dni(e)}} placeholder=" Dni"/>
+            <input type="text" name="dni" id="dni" value={dni} onChange={ (e)=>{ handle_input_dni(e)}} placeholder="Dni"/>
 
             <select name='cbo_lista_clases' id='cbo_lista_clases' onChange={handle_Input_select}>
                 <option value="0" key="0"> Seleccione un tipo</option>
                 {clases.map((clase)=>   <option value={clase.tipo} key={clase.id}> {clase.tipo}</option>   )}
             </select>
 
-            <input type="text" name="butaca" id="butaca" value={butaca} onChange={ (e)=>{ handle_input_butaca(e)}} placeholder=" Butaca"/>
+            <input type="text" name="butaca" id="butaca" value={butaca} onChange={ (e)=>{ handle_input_butaca(e)}} placeholder="Butaca"/>
             <button type="submit">Agregar</button>
         </form>
     </> );

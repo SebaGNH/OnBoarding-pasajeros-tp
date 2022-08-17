@@ -65,15 +65,21 @@ form input, select{
     align-items: center;
     flex-wrap: wrap;
     margin: 10px 0;
-    padding: 10px 0;
+    padding: 10px 15px;
     border-radius: 3px;
-    border: 1px solid #5cdcff;
+    border: 2px solid #5cdcff;
     font-size: 1em;
     font-weight: 300;
     letter-spacing: 1px;
+    
 }
 form input:focus{
-    border-color: #5cdcff;
+    border: 2px solid #0075ff;
+    outline: none;
+}
+form select:focus{
+    border: 2px solid #0075ff;
+    outline: none;
 }
 form select{
     background-color: #F5F5F5;
@@ -84,7 +90,7 @@ form button{
     margin: 0px auto;
     padding: 10px;
     color: #5cdcff;
-    border: 1px solid #5cdcff;
+    border: 2px solid #5cdcff;
     border-radius: 5px;
     cursor: pointer;
     font-weight: 500;
@@ -106,7 +112,6 @@ table{
     border-radius: 5px;
     font-size: 1em;
     font-weight: normal;
-    border: none;
     border-collapse: collapse;
     max-width: 100%;
     white-space: nowrap;
