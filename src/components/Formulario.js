@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import {FormSC,H1SC,InputSC,SelectSC,ButtonSC} from '../elements/FormularioSC'
 
 const Formulario = ({pasajeros, modificar_pasajero}) => {
     
@@ -54,20 +55,20 @@ const Formulario = ({pasajeros, modificar_pasajero}) => {
         validar_campos();
     }
     return ( <>
-        <h1>Aerolíneas Argentinas</h1>
-        <form action="" onSubmit={handle_submit} >                    
-            <input type="text" name="nombre_y_apellido" id="nombre_y_apellido" value={nombre_y_apellido} onChange={ (e)=>{ handle_input_nombre_y_apellido(e)}} placeholder="Nombre y Apellido"/>
+        <H1SC>Aerolíneas Argentinas</H1SC>
+        <FormSC action="" onSubmit={handle_submit} >                    
+            <InputSC type="text" name="nombre_y_apellido" id="nombre_y_apellido" value={nombre_y_apellido} onChange={ (e)=>{ handle_input_nombre_y_apellido(e)}} placeholder="Nombre y Apellido"/>
 
-            <input type="text" name="dni" id="dni" value={dni} onChange={ (e)=>{ handle_input_dni(e)}} placeholder="Dni"/>
+            <InputSC type="text" name="dni" id="dni" value={dni} onChange={ (e)=>{ handle_input_dni(e)}} placeholder="Dni"/>
 
-            <select name='cbo_lista_clases' id='cbo_lista_clases' onChange={handle_Input_select}>
+            <SelectSC name='cbo_lista_clases' id='cbo_lista_clases' onChange={handle_Input_select}>
                 <option value="0" key="0"> Seleccione un tipo</option>
                 {clases.map((clase)=>   <option value={clase.tipo} key={clase.id}> {clase.tipo}</option>   )}
-            </select>
+            </SelectSC>
 
-            <input type="text" name="butaca" id="butaca" value={butaca} onChange={ (e)=>{ handle_input_butaca(e)}} placeholder="Butaca"/>
-            <button type="submit">Agregar</button>
-        </form>
+            <InputSC type="text" name="butaca" id="butaca" value={butaca} onChange={ (e)=>{ handle_input_butaca(e)}} placeholder="Butaca"/>
+            <ButtonSC type="submit">Agregar</ButtonSC>
+        </FormSC>
     </> );
 }
 
