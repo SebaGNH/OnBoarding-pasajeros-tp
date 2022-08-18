@@ -31,14 +31,20 @@ const Formulario = ({pasajeros, modificar_pasajero}) => {
     }
 
     const validar_campos = () => {
-        if (nombre_y_apellido === "") {
+        if (nombre_y_apellido === "" ) {
             console.log("Nombre y apellido limpio");
+            return;
         }
     }
 
 
     const handle_submit = (e) => {
         e.preventDefault(); 
+
+        if (nombre_y_apellido === "" || dni === "" || butaca === '' || document.getElementById("cbo_lista_clases").selectedIndex === 0) {
+            console.log("Nombre y apellido limpio");
+            return;
+        }
         const canidad_pasajeros = pasajeros.length + 1;
 
         modificar_pasajero([

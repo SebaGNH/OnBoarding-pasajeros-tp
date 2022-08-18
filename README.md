@@ -33,6 +33,7 @@ img2
 
 
 <!--
+https://stackblitz.com/edit/react-ts-y6kdsf?file=App.js
 https://stackblitz.com/edit/react-ts-y6kdsf
 https://stackblitz.com/edit/react-ts-y6kdsf?file=App.js,components%2FDataTable.js,components%2FFormulario.js,style.css
 
