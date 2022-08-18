@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { createGlobalStyle } from 'styled-components';
 import {FormSC,H1SC,InputSC,SelectSC,ButtonSC} from '../elements/FormularioSC'
 
 const Formulario = ({pasajeros, modificar_pasajero}) => {
@@ -31,34 +32,58 @@ const Formulario = ({pasajeros, modificar_pasajero}) => {
     }
 
     const validar_campos = () => {
-        if (nombre_y_apellido === "" ) {
-            console.log("Nombre y apellido limpio");
-            return;
+
+        const valida_nombre_y_apellido = document.getElementById("nombre_y_apellido");
+        const valida_dni = document.getElementById("dni");
+        const valida_cbo = document.getElementById("cbo_lista_clases");
+        const valida_butaca = document.getElementById("butaca");
+
+        if (nombre_y_apellido === "") {
+            valida_nombre_y_apellido.style.borderColor = "#bb2929";
+            valida_nombre_y_apellido.focus();
+            return false;
+        }else if (dni === "") {
+            valida_nombre_y_apellido.style.borderColor = "#5cdcff";
+            valida_dni.style.borderColor = "#bb2929";
+            valida_dni.focus();
+            return false;
+        }else if (document.getElementById("cbo_lista_clases").selectedIndex === 0) {
+            valida_dni.style.borderColor = "#5cdcff";
+            valida_cbo.style.borderColor = "#bb2929";
+            valida_cbo.focus();
+            return false;
+        }else if (butaca === '') {
+            valida_cbo.style.borderColor = "#5cdcff";
+            valida_butaca.style.borderColor = "#bb2929";
+            valida_butaca.focus();
+            return false;
         }
+
+        valida_butaca.style.borderColor = "#5cdcff"; 
+        return true;
     }
 
 
     const handle_submit = (e) => {
         e.preventDefault(); 
+        if(validar_campos()){ 
 
-        if (nombre_y_apellido === "" || dni === "" || butaca === '' || document.getElementById("cbo_lista_clases").selectedIndex === 0) {
-            console.log("Nombre y apellido limpio");
-            return;
+            const canidad_pasajeros = pasajeros.length + 1;
+
+            modificar_pasajero([
+                ...pasajeros,
+                {
+                    id: canidad_pasajeros,
+                    nombre_y_apellido,
+                    dni,
+                    tipo_clase: cbo_clase,
+                    butaca
+                } 
+            ]);
+            limpiar_campos();
+            
         }
-        const canidad_pasajeros = pasajeros.length + 1;
-
-        modificar_pasajero([
-            ...pasajeros,
-            {
-                id: canidad_pasajeros,
-                nombre_y_apellido,
-                dni,
-                tipo_clase: cbo_clase,
-                butaca
-            } 
-        ]);
-        limpiar_campos();
-        validar_campos();
+        
     }
     return ( <>
         <H1SC>Aerolíneas Argentinas</H1SC>
