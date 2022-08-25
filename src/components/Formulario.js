@@ -1,14 +1,20 @@
 import React, { useState } from 'react'
 import { createGlobalStyle } from 'styled-components';
-import {FormSC,H1SC,InputSC,SelectSC,ButtonSC} from '../elements/FormularioSC'
+import {FormSC,H1SC,InputSC,InputSCErr,SelectSC,SelectSCErr,ButtonSC} from '../elements/FormularioSC'
 
 const Formulario = ({pasajeros, modificar_pasajero}) => {
     
     let [nombre_y_apellido, actualizar_nombre_y_apellido] = useState("");
     let [dni, actualizar_dni] = useState("");
-    let [cbo_clase, modificar_cbo_clase] = useState("FirstClass");
+    let [cbo_clase, modificar_cbo_clase] = useState("");
     let [butaca, actualizar_butaca] = useState("");
     let clases =[ { id: 1,  tipo: 'FirstClass' },{ id: 2,  tipo: 'Business' },{ id: 3,  tipo: 'Turista' },{ id: 4,  tipo: 'Economy' } ];
+
+    // validaciones
+    const [error_nombre_y_apellido, setError_nombre_y_apellido] = useState(false);
+    const [error_dni, setError_dni] = useState(false);
+    const [error_clase, setError_clase] = useState(false);
+    const [error_butaca, setError_butaca] = useState(false);
 
 
     const handle_input_nombre_y_apellido = (e)=>{
@@ -27,39 +33,35 @@ const Formulario = ({pasajeros, modificar_pasajero}) => {
     const limpiar_campos = (e) => {
         actualizar_nombre_y_apellido("");
         actualizar_dni("");
+        modificar_cbo_clase("")
         document.getElementById("cbo_lista_clases").selectedIndex = 0;
         actualizar_butaca("");
     }
 
     const validar_campos = () => {
 
-        const valida_nombre_y_apellido = document.getElementById("nombre_y_apellido");
-        const valida_dni = document.getElementById("dni");
-        const valida_cbo = document.getElementById("cbo_lista_clases");
-        const valida_butaca = document.getElementById("butaca");
-
-        if (nombre_y_apellido === "") {
-            valida_nombre_y_apellido.style.borderColor = "#bb2929";
-            valida_nombre_y_apellido.focus();
+        if (nombre_y_apellido.trim().length === 0) {
+            setError_nombre_y_apellido(true);
             return false;
-        }else if (dni === "") {
-            valida_nombre_y_apellido.style.borderColor = "#5cdcff";
-            valida_dni.style.borderColor = "#bb2929";
-            valida_dni.focus();
+        }else if (dni.trim().length === 0) {
+            setError_nombre_y_apellido(false);
+            setError_dni(true);
             return false;
-        }else if (document.getElementById("cbo_lista_clases").selectedIndex === 0) {
-            valida_dni.style.borderColor = "#5cdcff";
-            valida_cbo.style.borderColor = "#bb2929";
-            valida_cbo.focus();
+        }else if (cbo_clase.trim().length === 0) {
+            console.log(cbo_clase.trim().length);
+            setError_clase(true);
+            setError_dni(false);
+            document.getElementById("cbo_lista_clases").style.borderColor = "#bb2929";
             return false;
-        }else if (butaca === '') {
-            valida_cbo.style.borderColor = "#5cdcff";
-            valida_butaca.style.borderColor = "#bb2929";
-            valida_butaca.focus();
+        }else if (butaca.trim().length === 0) {
+            document.getElementById("cbo_lista_clases").style.borderColor = "#5cdcff";
+            setError_clase(false);
+            setError_butaca(true);
+            console.log(cbo_clase.trim().length);
             return false;
         }
+        setError_butaca(false);
 
-        valida_butaca.style.borderColor = "#5cdcff"; 
         return true;
     }
 
@@ -87,20 +89,56 @@ const Formulario = ({pasajeros, modificar_pasajero}) => {
     }
     return ( <>
         <H1SC>Aerolíneas Argentinas</H1SC>
-        <FormSC action="" onSubmit={handle_submit} >                    
-            <InputSC type="text" name="nombre_y_apellido" id="nombre_y_apellido" value={nombre_y_apellido} onChange={ (e)=>{ handle_input_nombre_y_apellido(e)}} placeholder="Nombre y Apellido"/>
+        <FormSC action="" onSubmit={handle_submit} >    
 
-            <InputSC type="text" name="dni" id="dni" value={dni} onChange={ (e)=>{ handle_input_dni(e)}} placeholder="Dni"/>
+        {error_nombre_y_apellido?
+            <InputSCErr autoFocus  type="text" name="nombre_y_apellido" id="nombre_y_apellido" value={nombre_y_apellido} onChange={ (e)=>{ handle_input_nombre_y_apellido(e)}} placeholder="Nombre y Apellido"/>
+        :
+            <InputSC type="text" name="nombre_y_apellido" id="nombre_y_apellido" value={nombre_y_apellido} onChange={ (e)=>{ handle_input_nombre_y_apellido(e)}} placeholder="Nombre y Apellido"/>
+        }
+
+        {error_dni?
+            <InputSCErr autoFocus type="text" name="dni" id="dni" value={dni} onChange={ (e)=>{ handle_input_dni(e)}} placeholder="Dni"/>        
+        :
+            <InputSC type="text" name="dni" id="dni" value={dni} onChange={ (e)=>{ handle_input_dni(e)}} placeholder="Dni"/>        
+        }
+
+
 
             <SelectSC name='cbo_lista_clases' id='cbo_lista_clases' onChange={handle_Input_select}>
                 <option value="0" key="0"> Seleccione un tipo</option>
-                {clases.map((clase)=>   <option value={clase.tipo} key={clase.id}> {clase.tipo}</option>   )}
+                {clases.map((clase)=>   <option value={clase.tipo} key={clase.id}> {clase.tipo}</option>   )} 
             </SelectSC>
 
+        {error_butaca?
+            <InputSCErr autoFocus type="text" name="butaca" id="butaca" value={butaca} onChange={ (e)=>{ handle_input_butaca(e)}} placeholder="Butaca"/>
+        :
             <InputSC type="text" name="butaca" id="butaca" value={butaca} onChange={ (e)=>{ handle_input_butaca(e)}} placeholder="Butaca"/>
+        }
+
             <ButtonSC type="submit">Agregar</ButtonSC>
         </FormSC>
     </> );
 }
 
 export default Formulario;
+
+
+/***
+ * 
+ * 
+        {error_clase?
+            <SelectSCErr name='cbo_lista_clases' id='cbo_lista_clases' onChange={handle_Input_select}>
+                <option value="0" key="0"> Seleccione un tipo</option>
+                {clases.map((clase)=>   <option value={clase.tipo} key={clase.id}> {clase.tipo}</option>   )} 
+            </SelectSCErr>
+        :
+            <SelectSC name='cbo_lista_clases' id='cbo_lista_clases' onChange={handle_Input_select}>
+                <option value="0" key="0"> Seleccione un tipo</option>
+                {clases.map((clase)=>   <option value={clase.tipo} key={clase.id}> {clase.tipo}</option>   )} 
+            </SelectSC>
+        }
+ * 
+ * 
+ * 
+ */

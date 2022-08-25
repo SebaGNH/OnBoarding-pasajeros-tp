@@ -36,6 +36,24 @@ const InputSC = styled.input`
         outline: none;
     }
 `;
+const InputSCErr = styled.input`
+    background-color: #fff;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 10px 0;
+    padding: 10px 15px;
+    border-radius: 3px;
+    border: 2px solid #bb2929;
+    font-size: 1em;
+    font-weight: 300;
+    letter-spacing: 1px;
+    &:focus{
+        border: 2px solid #bb2929;
+        outline: none;
+    }
+`;
 const SelectSC = styled.select`
     background-color: #F5F5F5;
     width: 90%;
@@ -51,6 +69,24 @@ const SelectSC = styled.select`
     letter-spacing: 1px;
     &:focus{
         border: 2px solid #0075ff;
+        outline: none;
+    }
+`;
+const SelectSCErr = styled.select`
+    background-color: #F5F5F5;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 10px 0;
+    padding: 10px 15px;
+    border-radius: 3px;
+    border: 2px solid #bb2929;
+    font-size: 1em;
+    font-weight: 300;
+    letter-spacing: 1px;
+    &:focus{
+        border: 2px solid #bb2929;
         outline: none;
     }
 `;
@@ -75,4 +111,4 @@ const ButtonSC = styled.button`
     }
 `;
 
-export {FormSC,H1SC,InputSC,SelectSC,ButtonSC};
+export {FormSC,H1SC,InputSC,InputSCErr,SelectSC,SelectSCErr,ButtonSC};
