@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/OnBoarding-pasajeros-tp/static/css/main.7abe594b.css",
-    "main.js": "/OnBoarding-pasajeros-tp/static/js/main.1eb08a89.js",
+    "main.css": "/OnBoarding-pasajeros-tp/static/css/main.7ce48c52.css",
+    "main.js": "/OnBoarding-pasajeros-tp/static/js/main.62ee12fd.js",
     "index.html": "/OnBoarding-pasajeros-tp/index.html",
-    "main.7abe594b.css.map": "/OnBoarding-pasajeros-tp/static/css/main.7abe594b.css.map",
-    "main.1eb08a89.js.map": "/OnBoarding-pasajeros-tp/static/js/main.1eb08a89.js.map"
+    "main.7ce48c52.css.map": "/OnBoarding-pasajeros-tp/static/css/main.7ce48c52.css.map",
+    "main.62ee12fd.js.map": "/OnBoarding-pasajeros-tp/static/js/main.62ee12fd.js.map"
   },
   "entrypoints": [
-    "static/css/main.7abe594b.css",
-    "static/js/main.1eb08a89.js"
+    "static/css/main.7ce48c52.css",
+    "static/js/main.62ee12fd.js"
   ]
 }
