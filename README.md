@@ -34,6 +34,9 @@ img2
 
 <!--
 
+
+
+
 npm i --save styled-components
 
 
@@ -57,5 +60,9 @@ npm i --save bootstrap @popperjs/core
                     console.log(pasajeros) 
                 }}>Mostrar</button>
             </div>
+
+-------------
+utilizando styled components
+google fonts 
 
 -->

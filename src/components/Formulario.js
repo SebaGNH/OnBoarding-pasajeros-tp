@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
 import { createGlobalStyle } from 'styled-components';
-import {FormSC,H1SC,InputSC,InputSCErr,SelectSC,SelectSCErr,ButtonSC} from '../elements/FormularioSC'
+import {FormSC,H1SC,InputSC,InputSCErr,SelectSC,SelectSCErr,ButtonSC} from '../Styles/FormularioSC'
 
 const Formulario = ({pasajeros, modificar_pasajero}) => {
     
-    let [nombre_y_apellido, actualizar_nombre_y_apellido] = useState("");
-    let [dni, actualizar_dni] = useState("");
-    let [cbo_clase, modificar_cbo_clase] = useState("");
-    let [butaca, actualizar_butaca] = useState("");
-    let clases =[ { id: 1,  tipo: 'FirstClass' },{ id: 2,  tipo: 'Business' },{ id: 3,  tipo: 'Turista' },{ id: 4,  tipo: 'Economy' } ];
+    const [nombre_y_apellido, actualizar_nombre_y_apellido] = useState("");
+    const [dni, actualizar_dni] = useState("");
+    const [cbo_clase, modificar_cbo_clase] = useState("");
+    const [butaca, actualizar_butaca] = useState("");
+    const clases =[ { id: 1,  tipo: 'FirstClass' },{ id: 2,  tipo: 'Business' },{ id: 3,  tipo: 'Turista' },{ id: 4,  tipo: 'Economy' } ];
 
     // validaciones
     const [error_nombre_y_apellido, setError_nombre_y_apellido] = useState(false);
@@ -122,23 +122,3 @@ const Formulario = ({pasajeros, modificar_pasajero}) => {
 }
 
 export default Formulario;
-
-
-/***
- * 
- * 
-        {error_clase?
-            <SelectSCErr name='cbo_lista_clases' id='cbo_lista_clases' onChange={handle_Input_select}>
-                <option value="0" key="0"> Seleccione un tipo</option>
-                {clases.map((clase)=>   <option value={clase.tipo} key={clase.id}> {clase.tipo}</option>   )} 
-            </SelectSCErr>
-        :
-            <SelectSC name='cbo_lista_clases' id='cbo_lista_clases' onChange={handle_Input_select}>
-                <option value="0" key="0"> Seleccione un tipo</option>
-                {clases.map((clase)=>   <option value={clase.tipo} key={clase.id}> {clase.tipo}</option>   )} 
-            </SelectSC>
-        }
- * 
- * 
- * 
- */

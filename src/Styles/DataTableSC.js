@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const TableSC = styled.table`
+const Table = styled.table`
     background-color: white;
     width: 80%;
     border-radius: 5px;
@@ -13,13 +13,13 @@ const TableSC = styled.table`
     margin: 20px 0;
 `;
 
-const TrSC =styled.tr`
+const Tr =styled.tr`
     &:nth-child(even){
         background: #EBEBEB;
     }
 `;
 
-const ThSC = styled.th`
+const Th = styled.th`
     color: #ffffff;
     background: #5cdcff;
     &:nth-child(odd){
@@ -29,12 +29,12 @@ const ThSC = styled.th`
     
 `;
 
-const TdSC = styled.td`
+const Td = styled.td`
     border-right: 1px solid #f8f8f8;
     font-size: 1em;
 `;
 
-const H2SC = styled.h2`
+const H2 = styled.h2`
     color: #5cdcff;
     position: relative;
     margin-bottom: 20px;
@@ -53,4 +53,4 @@ const H2SC = styled.h2`
 `;
 
 
-export {TableSC,TrSC,ThSC,TdSC,H2SC};
+export {Table,Tr,Th,Td,H2};

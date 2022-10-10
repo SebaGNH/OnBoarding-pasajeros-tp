@@ -1,5 +1,5 @@
 import React from 'react'
-import {TableSC,TrSC,ThSC,TdSC,H2SC} from'../elements/DataTableSC'
+import {Table,Tr,Th,Td,H2} from'../Styles/DataTableSC'
 
 
 
@@ -7,29 +7,29 @@ const DataTable = ({pasajeros}) => {
     return ( 
         <>
             {pasajeros.length > 0 ?             
-                <TableSC>
+                <Table>
                     <thead>
-                        <TrSC>
-                            <ThSC>Id</ThSC>                
-                            <ThSC>Nombre y Apellido</ThSC>
-                            <ThSC>Dni</ThSC>
-                            <ThSC>Clase</ThSC>
-                            <ThSC>Butaca</ThSC>
-                        </TrSC>
+                        <Tr>
+                            <Th>Id</Th>                
+                            <Th>Nombre y Apellido</Th>
+                            <Th>Dni</Th>
+                            <Th>Clase</Th>
+                            <Th>Butaca</Th>
+                        </Tr>
                     </thead>
                     <tbody >
                         {pasajeros.map( (pasajero, index) =>(
-                            <TrSC key={index}>
-                                <TdSC>{pasajero.id}</TdSC>
-                                <TdSC>{pasajero.nombre_y_apellido}</TdSC>
-                                <TdSC>{pasajero.dni}</TdSC>
-                                <TdSC>{pasajero.tipo_clase}</TdSC>
-                                <TdSC>{pasajero.butaca}</TdSC>
-                            </TrSC>
+                            <Tr key={index}>
+                                <Td>{pasajero.id}</Td>
+                                <Td>{pasajero.nombre_y_apellido}</Td>
+                                <Td>{pasajero.dni}</Td>
+                                <Td>{pasajero.tipo_clase}</Td>
+                                <Td>{pasajero.butaca}</Td>
+                            </Tr>
                         ))}
                     </tbody>
-            </TableSC> 
-            : <H2SC>No hay pasajeros agregados</H2SC>}
+            </Table> 
+            : <H2>No hay pasajeros agregados</H2>}
         </>
     );
 }

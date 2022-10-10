@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Formulario from './components/Formulario'
 import DataTable from './components/DataTable'
 const App = () => {
-    let [pasajeros, modificar_pasajero] = useState([]);
+    const [pasajeros, modificar_pasajero] = useState([]);
 
     return ( 
         <>      
