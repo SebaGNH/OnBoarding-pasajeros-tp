@@ -1,10 +1,10 @@
 Click para ver online[https://sebagnh.github.io/OnBoarding-pasajeros-tp/](https://sebagnh.github.io/OnBoarding-pasajeros-tp/ "Click para ver online")
 
-Trabajo practico programa PIL – React JS
-App OnBoarding Aerolíneas Argentinas
+Trabajo practico - React JS
+App OnBoarding Aerolíneas
 
 Consigna:
-Vates acaba de licitar un proyecto con Aerolíneas Argentinas para generar de OnBoarding en el cual, los pasajeros se anuncian al vuelo saliente , se le capturan los datos y se los muestran en pantalla.
+Se ha licitado un proyecto con Aerolíneas para generar de OnBoarding en el cual, los pasajeros se anuncian al vuelo saliente, se le capturan los datos y se los muestran en pantalla.
 El área de análisis funciona ha propuesto una app generada en React debido a su portabilidad y flexibilidad.
 
 Se deberá capturar los siguientes datos,

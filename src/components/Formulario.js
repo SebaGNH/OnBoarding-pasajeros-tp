@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
-import { createGlobalStyle } from 'styled-components';
-import {FormSC,H1SC,InputSC,InputSCErr,SelectSC,SelectSCErr,ButtonSC} from '../Styles/FormularioSC'
+import {Form,H1,Input,InputErr,SelectSC,SelectErr,Button} from '../Styles/FormularioSC'
 
 const Formulario = ({pasajeros, modificar_pasajero}) => {
     
@@ -82,25 +81,25 @@ const Formulario = ({pasajeros, modificar_pasajero}) => {
                     butaca
                 } 
             ]);
-            limpiar_campos();
-            
-        }
-        
+            limpiar_campos();            
+        }        
     }
+
+
     return ( <>
-        <H1SC>Aerolíneas Argentinas</H1SC>
-        <FormSC action="" onSubmit={handle_submit} >    
+        <H1>Aerolíneas</H1>
+        <Form action="" onSubmit={handle_submit} >    
 
         {error_nombre_y_apellido?
-            <InputSCErr autoFocus  type="text" name="nombre_y_apellido" id="nombre_y_apellido" value={nombre_y_apellido} onChange={ (e)=>{ handle_input_nombre_y_apellido(e)}} placeholder="Nombre y Apellido"/>
+            <InputErr autoFocus  type="text" name="nombre_y_apellido" id="nombre_y_apellido" value={nombre_y_apellido} onChange={ (e)=>{ handle_input_nombre_y_apellido(e)}} placeholder="Nombre y Apellido"/>
         :
-            <InputSC type="text" name="nombre_y_apellido" id="nombre_y_apellido" value={nombre_y_apellido} onChange={ (e)=>{ handle_input_nombre_y_apellido(e)}} placeholder="Nombre y Apellido"/>
+            <Input type="text" name="nombre_y_apellido" id="nombre_y_apellido" value={nombre_y_apellido} onChange={ (e)=>{ handle_input_nombre_y_apellido(e)}} placeholder="Nombre y Apellido"/>
         }
 
         {error_dni?
-            <InputSCErr autoFocus type="text" name="dni" id="dni" value={dni} onChange={ (e)=>{ handle_input_dni(e)}} placeholder="Dni"/>        
+            <InputErr autoFocus type="text" name="dni" id="dni" value={dni} onChange={ (e)=>{ handle_input_dni(e)}} placeholder="Dni"/>        
         :
-            <InputSC type="text" name="dni" id="dni" value={dni} onChange={ (e)=>{ handle_input_dni(e)}} placeholder="Dni"/>        
+            <Input type="text" name="dni" id="dni" value={dni} onChange={ (e)=>{ handle_input_dni(e)}} placeholder="Dni"/>        
         }
 
 
@@ -111,13 +110,13 @@ const Formulario = ({pasajeros, modificar_pasajero}) => {
             </SelectSC>
 
         {error_butaca?
-            <InputSCErr autoFocus type="text" name="butaca" id="butaca" value={butaca} onChange={ (e)=>{ handle_input_butaca(e)}} placeholder="Butaca"/>
+            <InputErr autoFocus type="text" name="butaca" id="butaca" value={butaca} onChange={ (e)=>{ handle_input_butaca(e)}} placeholder="Butaca"/>
         :
-            <InputSC type="text" name="butaca" id="butaca" value={butaca} onChange={ (e)=>{ handle_input_butaca(e)}} placeholder="Butaca"/>
+            <Input type="text" name="butaca" id="butaca" value={butaca} onChange={ (e)=>{ handle_input_butaca(e)}} placeholder="Butaca"/>
         }
 
-            <ButtonSC type="submit">Agregar</ButtonSC>
-        </FormSC>
+            <Button type="submit">Agregar</Button>
+        </Form>
     </> );
 }
 

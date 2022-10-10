@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
 
-const H1SC = styled.h1`
+const H1 = styled.h1`
     color: #fff;
 `;
 
-const FormSC = styled.form`
+const Form = styled.form`
     background-color:#fff;
     width: 80%;
     height: 350px;
@@ -18,7 +18,7 @@ const FormSC = styled.form`
     margin: 20px auto;
 `;
 
-const InputSC = styled.input`
+const Input = styled.input`
     background-color: #fff;
     width: 90%;
     display: flex;
@@ -36,7 +36,7 @@ const InputSC = styled.input`
         outline: none;
     }
 `;
-const InputSCErr = styled.input`
+const InputErr = styled.input`
     background-color: #fff;
     width: 90%;
     display: flex;
@@ -72,7 +72,7 @@ const SelectSC = styled.select`
         outline: none;
     }
 `;
-const SelectSCErr = styled.select`
+const SelectErr = styled.select`
     background-color: #F5F5F5;
     width: 90%;
     display: flex;
@@ -91,7 +91,7 @@ const SelectSCErr = styled.select`
     }
 `;
 
-const ButtonSC = styled.button`
+const Button = styled.button`
     background-color: #fff;
     width: 90%;
     margin: 0px auto;
@@ -111,4 +111,4 @@ const ButtonSC = styled.button`
     }
 `;
 
-export {FormSC,H1SC,InputSC,InputSCErr,SelectSC,SelectSCErr,ButtonSC};
+export {Form,H1,Input,InputErr,SelectSC,SelectErr,Button};
