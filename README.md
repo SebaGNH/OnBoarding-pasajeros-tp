@@ -65,4 +65,13 @@ npm i --save bootstrap @popperjs/core
 utilizando styled components
 google fonts 
 
+
+Buen día! Les comparto este proyecto en React utilizando diferentes compoentes con su estado, estilos con "Styled-components" y fuente "Poppins" de Google Fonts.
+
+Pueden verlo online: https://goo.su/ftnhmsS
+y su repositorio con el código: https://goo.su/g8I7
+
+
+Pueden verlo online: https://sebagnh.github.io/OnBoarding-pasajeros-tp/
+y su repositorio con el código: https://github.com/SebaGNH/OnBoarding-pasajeros-tp
 -->
